@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.navBar{
+    display: flex;
+    align-items: center;
+    height: 150px;
+    justify-content: space-around;
+    background-color: brown;
+    width: 100%;
+    align-items: center;
+}
+.navBar a:hover{
+    color: black;
+}
+
+.lista{
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    font-size: 25px;
+    justify-content: center;
+    
+ 
+}
+
+.listaItem a{
+    text-decoration: none;
+    padding: 10px;
+    color: aliceblue;
+    
+
+}
+
+.logo{
+    height: 70px;
+    
+}
+
+.titulo{
+    font-size: 50px;
+}
+
+.carrito{
+    position: relative;
+    
+}
+
+.placa{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ee7787;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
