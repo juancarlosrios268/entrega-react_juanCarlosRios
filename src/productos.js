@@ -1,68 +1,90 @@
-const procuctos = [
+ const productos = [
     {
       id: 1,
       nombre: "Máquina de tatuaje flux",
-      precio: 150,
-      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras."
+      precio: 4000000,
+      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras.",
+      imagen: "./public/maquina-flux.jpg",
+      categoria:"maquina"
+
     },
     {
       id: 2,
       nombre: "Tinta para tatuaje Dynamic Black",
-      precio: 20,
-      descripcion: "Tinta negra de alta calidad, segura para la piel."
+      precio: 180000,
+      descripcion: "Tinta negra de alta calidad, segura para la piel.",
+      imagen: "./public/dynamic-black.webp",
+      categoria:"tinta"
+
     },
     {
       id: 3,
       nombre: "Agujas en cartucho wjx",
-      precio: 10,
+      precio: 100000,
       descripcion: "Paquete de 10 agujas estériles, disponibles en diferentes tamaños.",
+      imagen: "./public/cartuchos-wjx.jpeg",
+      categoria:"cartuchos"
       
     },
     {
       id: 4,
       nombre: "Agujas en cartucho Arena",
-      precio: 5,
-      descripcion: "Paquete de 10 agujas estériles, disponibles en diferentes tamaños."
+      precio: 90000,
+      descripcion: "Paquete de 10 agujas estériles, disponibles en diferentes tamaños.",
+      imagen: "./public/cartuchos-arena.webp",
+       categoria:"cartuchos"
       
       
     },
     {
       id: 5,
       nombre: "Agujas en cartucho kuadron",
-      precio: 3,
-      descripcion: "Paquete de 10 agujas estériles, disponibles en diferentes tamaños."
+      precio: 150000,
+      descripcion: "Paquete de 10 agujas estériles, disponibles en diferentes tamaños.",
+      imagen: "./public/cartuchos-kwadron.jpeg",
+       categoria:"cartuchos"
     },
     {
       id: 6,
-      nombre: "Maquina chellene",
-      precio: 15,
-      descripcion: "Spray para desinfectar la piel antes y después del tatuaje."
+      nombre: "Maquina cheyene",
+      precio: 2500000,
+      descripcion: "Maquina de tatuaje profesional.",
+      imagen: "./public/maquina-cheyenne.jpg",
+      categoria:"maquina"
     },
     {
       id: 7,
       nombre: "Tinta Dynamic Withe",
-      precio: 8,
-      descripcion: "Tinta negra de alta calidad, segura para la piel."
+      precio: 200000,
+      descripcion: "Tinta blanca de alta calidad, segura para la piel.",
+      imagen: "./public/dynamic-white.webp",
+       categoria:"tinta"
     },
     {
       id: 8,
       nombre: "Maquina de tatuar Mast Pro",
-      precio: 12,
-      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras."
+      precio: 700000,
+      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras.",
+      imagen: "./public/maquina-mast.jpeg",
+      categoria:"maquina"
     },
     {
       id: 9,
       nombre: "Tinta Dynamic Gray",
-      precio: 4,
-      descripcion: "Tinta negra de alta calidad, segura para la piel."
+      precio: 80000,
+      descripcion: "Tinta gris de alta calidad, segura para la piel.",
+      imagen: "./public/dynamic-gray.jpeg",
+       categoria:"tinta"
     },
     {
       id: 10,
-      nombre: "Máquina rotativa EZ",
-      precio: 100,
-      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras."
+      nombre: "Máquina rotativa Dragon Hawk",
+      precio: 500000,
+      descripcion: "Máquina rotativa profesional, ideal para líneas y sombras.",
+      imagen: "./public/maquina-dragon.jpg",
+      categoria:"maquina"
     },
   ];
 
 
-  export default procuctos;
+  export default productos;

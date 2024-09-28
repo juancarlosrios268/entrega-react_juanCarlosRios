@@ -9,11 +9,13 @@ function DetalleProducto(){
 
 
     return(
-        <div>
+        <div className="cardDetalle">
             <h2>Detalle del producto</h2>
+            <img className="img" src={productoTatuaje.imagen} />
             <h2>{productoTatuaje.nombre}</h2>
             <p>{productoTatuaje.precio}</p>
             <h3>{productoTatuaje.descripcion}</h3>
+           
         </div>
     )
 }

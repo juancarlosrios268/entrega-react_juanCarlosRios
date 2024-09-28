@@ -1,13 +1,44 @@
 #container {
+    
     display: flex;
-    gap: 15px;
+    gap: 45px;
     flex-wrap: wrap;
+    background-color: black;
+    justify-content: center;
 }
 
 .card {
-    height: 150px;
-    width: 150px;
-    background-color: rgb(20, 200, 220);
+    margin-top: 20px;
+    height: 400px;
+    width: 300px;
+    background-color: rgb(172, 64, 64);
     border-radius: 15px;
     text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    
+    
+}
+
+.cardDetalle{
+    margin-top: 20px;
+    height: 600px;
+    width: 500px;
+    background-color: rgb(172, 64, 64);
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    
+}
+
+.img {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+
 }

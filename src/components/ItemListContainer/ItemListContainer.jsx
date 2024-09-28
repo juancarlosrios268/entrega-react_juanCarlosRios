@@ -1,13 +1,14 @@
-import procuctos from "../../productos"
-import Producto from "../Producto"
+import productos from "../../productos"
+import Producto from "../itemDetailContainer"
 import "./card.css"
+import { useState } from "react"
 
 
 
 function ItemListContainer() {
     return (
       <div id="container">
-            {procuctos.map(prod=>(
+            {productos.map(prod=>(
               <Producto key ={prod.id} {...prod} />
             ))}
             
