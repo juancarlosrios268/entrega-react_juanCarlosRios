@@ -13,7 +13,13 @@ function NavBar() {
               <Link to={"/"}>Home</Link>
             </li>
             <li className="listaItem">
-              <Link to={"ItemListContainer"}>Productos</Link>
+              <Link to={"Maquinas"}>Maquinas</Link>
+             </li>
+             <li className="listaItem">
+              <Link to={"Tintas"}>Tintas</Link>
+             </li>
+             <li className="listaItem">
+              <Link to={"Cartuchos"}>Cartuchos</Link>
              </li>
              <li className="listaItem">
               <Link to={"Contacto"}>Contacto</Link>
