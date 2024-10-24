@@ -1,6 +1,5 @@
-import productos from "../../productos"
-import Producto from "../itemDetailContainer"
-import "./card.css"
+import productos from "../productos"
+import Producto from "../components/itemDetailContainer"
 import { useState } from "react"
 
 

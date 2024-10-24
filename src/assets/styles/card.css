@@ -1,0 +1,85 @@
+#container {
+    
+    display: flex;
+    gap: 45px;
+    flex-wrap: wrap;
+    background-color: #e8e8e8;
+    justify-content: center;
+}
+
+.card {
+    width: 320px;
+    height: 420px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    position: relative;
+    padding: 1.8rem;
+    border: 2px solid #c3c6ce;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    
+    
+}
+
+.nombreProducto{
+ font-size: 25px;
+ font-weight: bold;
+ text-decoration: none;
+ text-align: center;
+ color: black;
+}
+
+.precioProducto{
+  font-size: 15px;
+ font-weight: bold;
+ text-decoration: none;
+ text-align: center;
+ color: black;
+ margin: 10px;
+}
+
+.cardDetalle{
+ width: 500px;
+ border-radius: 20px;
+background: #f5f5f5;
+border: 2px solid #c3c6ce;
+ color: black;
+ height: 100%;
+ gap: .5em;
+ display: grid;
+ place-content: center;
+ 
+}
+
+.img {
+  
+    width: 200px;
+    height: 200px;
+    
+
+}
+
+.botonComprar{
+    background-color: white;
+  color: black;
+  border-radius: 10em;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0 black;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+  };
+  
+  button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+  };

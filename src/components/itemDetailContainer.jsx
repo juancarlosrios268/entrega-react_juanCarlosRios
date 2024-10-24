@@ -8,9 +8,9 @@ function itemDetailContainer({nombre,precio,id,imagen}) {
 
     <Link to={`/ItemListContainer/${id}`} className="card">
     <img className="img" src={imagen}/>
-    <h2>{nombre}</h2>
-    <h3>$: {precio}</h3>
-    <button>comprar</button>
+    <h2 className="nombreProducto">{nombre}</h2>
+    <h3 className="precioProducto">$: {precio}</h3>
+    <button className="botonComprar">comprar</button>
     </Link>
     
   )
