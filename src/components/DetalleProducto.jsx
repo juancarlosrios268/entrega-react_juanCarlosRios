@@ -1,9 +1,13 @@
 import productos from "../productos";
 import { useParams } from "react-router-dom";
-
+import { CartContext } from "./CartContext";
+import { useContext } from "react";
 
 
 function DetalleProducto(){
+
+    const {addToCart} = useContext(CartContext)
+
     const {id} = useParams();
 
     const productoTatuaje=productos.find(prod=>prod.id===parseInt(id))
@@ -17,7 +21,7 @@ function DetalleProducto(){
             <h2>{productoTatuaje.nombre}</h2>
             <p>{productoTatuaje.precio}</p>
             <h3>{productoTatuaje.descripcion}</h3>
-            <button onClick={()=>addToCart} className="botonComprar">+</button>
+            <button onClick={() => addToCart(productoTatuaje)} className="botonComprar">+</button>
             <button className="botonComprar">-</button>
            
         </div>
