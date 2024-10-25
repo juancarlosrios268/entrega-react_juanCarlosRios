@@ -1,11 +1,21 @@
 import { FaShoppingCart } from "react-icons/fa";
+import "./style.css"
 
 function CartWidget() {
     return (
-      <div className="carrito">
+      <>
+      <label className="cart-button">
          <FaShoppingCart size="40px"/> 
-         <span className="placa">8</span>
-      </div>
+      </label>
+      <input type="checkbox" hidden />
+      <aside className="cart">
+        <ul>
+         <li>a</li>
+         <li>b</li>
+        </ul>
+      </aside>
+      <button>limpiar</button>
+      </>
     )
   }
   

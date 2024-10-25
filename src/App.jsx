@@ -9,23 +9,27 @@ import Maquinas from './paginas/Maquinas'
 import Tintas from './paginas/Tintas'
 import Cartuchos from './paginas/Cartuchos'
 import "./assets/styles/card.css"
+import { CartProvider } from './components/CartContext'
+
 
 function App() {
   return (
     <>
      {/* <NavBar/> */}
-      <BrowserRouter>
-          <Routes>
-              <Route path="/" element={<NavBar/>}>
-                <Route index element={<ItemListContainer/>}/>
-                <Route path="ItemListContainer/:id" element={<DetalleProducto/>}/>
-                <Route path="Maquinas" element={<Maquinas/>}/>
-                <Route path="Tintas" element={<Tintas/>}/>
-                <Route path="Cartuchos" element={<Cartuchos/>}/>
-                <Route path="Contacto" element={<Contacto/>}/>
-              </Route>
-          </Routes>
-      </BrowserRouter>
+      <CartProvider>
+          <BrowserRouter>
+              <Routes>
+                  <Route path="/" element={<NavBar/>}>
+                    <Route index element={<ItemListContainer/>}/>
+                    <Route path="ItemListContainer/:id" element={<DetalleProducto/>}/>
+                    <Route path="Maquinas" element={<Maquinas/>}/>
+                    <Route path="Tintas" element={<Tintas/>}/>
+                    <Route path="Cartuchos" element={<Cartuchos/>}/>
+                    <Route path="Contacto" element={<Contacto/>}/>
+                  </Route>
+              </Routes>
+          </BrowserRouter>
+      </CartProvider>
     
     </>
   )

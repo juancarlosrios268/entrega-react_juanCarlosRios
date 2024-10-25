@@ -2,6 +2,7 @@ import productos from "../productos";
 import { useParams } from "react-router-dom";
 
 
+
 function DetalleProducto(){
     const {id} = useParams();
 
@@ -16,7 +17,7 @@ function DetalleProducto(){
             <h2>{productoTatuaje.nombre}</h2>
             <p>{productoTatuaje.precio}</p>
             <h3>{productoTatuaje.descripcion}</h3>
-            <button className="botonComprar">+</button>
+            <button onClick={()=>addToCart} className="botonComprar">+</button>
             <button className="botonComprar">-</button>
            
         </div>
