@@ -8,7 +8,6 @@ import { useContext } from "react";
 function CartWidget() {
 
     const { cart } = useContext(CartContext)
-    console.log(cart)
 
     return (
       <>

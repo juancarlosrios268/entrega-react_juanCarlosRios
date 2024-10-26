@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import {collection, getDocs } from 'firebase/firestore/lite'
+import db from "../firebase";
 
 // creacion del contexto
 export const CartContext = createContext()
@@ -6,6 +8,14 @@ export const CartContext = createContext()
 // creacion del provider
 export function CartProvider ({children}){
     const [cart, setCart] = useState([])
+
+    async function getProducts() {
+      const productosCol = collection(db, 'productos')
+      const productosSnapshot = await getDocs(productosCol)
+      const productos = productosSnapshot.docs.map(producto => producto.data())
+      return productos
+    }
+  
 
   //agregar y limpiar carrito
     const addToCart= (product) => {
@@ -43,7 +53,8 @@ export function CartProvider ({children}){
         cart,
         addToCart,
         clearCart,
-        setCart
+        setCart,
+        getProducts,
       }}
       >
         {children}
