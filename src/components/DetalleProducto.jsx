@@ -12,6 +12,7 @@ function DetalleProducto(){
   const { getProducts } = useContext(CartContext)
   const {addToCart} = useContext(CartContext)
   const {clearCart} = useContext(CartContext)
+  const {removeCart}= useContext(CartContext)
   const {id} = useParams();
   
   useEffect(() => {
@@ -42,8 +43,7 @@ function DetalleProducto(){
             <p>{productoTatuaje.precio}</p>
             <h3>{productoTatuaje.descripcion}</h3>
             <button onClick={() => addToCart(productoTatuaje)} className="botonComprar">+</button>
-            <button onClick={() => clearCart(productoTatuaje)} className="botonComprar">-</button>
-            <button className="botonComprar">-</button>
+            <button onClick={()=> removeCart(productoTatuaje)} className="botonComprar">-</button>
         </div>
     )
 }

@@ -18,6 +18,12 @@ export function CartProvider ({children}){
   
 
   //agregar y limpiar carrito
+    const removeCart= product =>{
+      setCart(cart.filter(item=> item.id != product.id))
+      console.log(removeCart)
+    }
+
+
     const addToCart= (product) => {
       let newProduct = {
         precio: product.precio,
@@ -55,6 +61,7 @@ export function CartProvider ({children}){
         cart,
         addToCart,
         clearCart,
+        removeCart,
         setCart,
         getProducts,
       }}
