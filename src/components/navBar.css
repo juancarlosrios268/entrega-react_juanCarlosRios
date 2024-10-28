@@ -8,10 +8,9 @@
 
 .navBar{
     display: flex;
-    align-items: center;
     height: 150px;
     justify-content: space-around;
-    background-color: brown;
+    background-color: #17263b;
     width: 100%;
     align-items: center;
 }

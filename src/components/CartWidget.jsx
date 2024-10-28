@@ -8,6 +8,7 @@ import { useContext } from "react";
 function CartWidget() {
 
     const { cart } = useContext(CartContext)
+    const {clearCart} = useContext(CartContext)
 
     return (
       <>
@@ -22,12 +23,12 @@ function CartWidget() {
                 <p>{prod.nombre}</p>
                 <p>{prod.precio}</p>
                 <p>{prod.cantidad}</p>
+                <button onClick={() => clearCart(cart)} className="botonComprar">limpiar</button>
 
               </li>
             ))}
         </ul>
       </aside>
-      <button>limpiar</button>
       </>
     )
   }

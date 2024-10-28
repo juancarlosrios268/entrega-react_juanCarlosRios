@@ -5,18 +5,19 @@ import { useEffect, useState } from "react"
 
 
 function DetalleProducto(){
-//   const [productsFir, setProductosFir] = useState([])
+
   const [productoTatuaje, setProductoTatuaje] = useState(null)
   const [imgPath, setImgPath] = useState('')
 
   const { getProducts } = useContext(CartContext)
   const {addToCart} = useContext(CartContext)
+  const {clearCart} = useContext(CartContext)
   const {id} = useParams();
   
   useEffect(() => {
     getProducts().then(data => {
       console.log(data)
-    //   setProductosFir(data)
+
       
     setProductoTatuaje(data.find(prod=>prod.id===parseInt(id)))
     console.log(productoTatuaje)
@@ -41,6 +42,7 @@ function DetalleProducto(){
             <p>{productoTatuaje.precio}</p>
             <h3>{productoTatuaje.descripcion}</h3>
             <button onClick={() => addToCart(productoTatuaje)} className="botonComprar">+</button>
+            <button onClick={() => clearCart(productoTatuaje)} className="botonComprar">-</button>
             <button className="botonComprar">-</button>
         </div>
     )

@@ -44,6 +44,8 @@ export function CartProvider ({children}){
       }
 
     }
+
+
     const clearCart= ()=>{
       setCart([])
     }

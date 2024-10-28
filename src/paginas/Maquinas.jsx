@@ -21,7 +21,7 @@ function Maquinas() {
   }
 
   return (
-    <div id="container">
+    <div id="containerDetalle">
       {productsFir.map(prod =>{ 
         if( prod.categoria === "maquina") {
           return (
