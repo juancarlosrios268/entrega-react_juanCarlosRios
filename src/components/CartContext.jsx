@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import {collection, getDocs } from 'firebase/firestore/lite'
+import {collection, getDocs, addDoc } from 'firebase/firestore/lite'
 import db from "../firebase";
 
 // creacion del contexto
@@ -14,6 +14,24 @@ export function CartProvider ({children}){
       const productosSnapshot = await getDocs(productosCol)
       const productos = productosSnapshot.docs.map(producto => producto.data())
       return productos
+    }
+
+    async function setCompra() {
+      try {
+        let totalCarrito=0
+        cart.forEach(element => {
+          totalCarrito = totalCarrito + element.precio
+        })
+        
+
+        const docRef = await addDoc(collection(db, 'compras'), {
+          detalle: cart,
+          total: totalCarrito
+        })
+        console.log(docRef)
+      } catch(e) {
+        console.log(e)
+      }
     }
   
 
@@ -36,6 +54,7 @@ export function CartProvider ({children}){
 
       const newCart = cart.map(element => {
         if (element.id === newProduct.id) {
+          console.log(newProduct.precio, element.precio)
             element.cantidad += 1
             element.precio += newProduct.precio
         }
@@ -51,6 +70,9 @@ export function CartProvider ({children}){
 
     }
 
+    const totalCarrito= 0
+
+    
 
     const clearCart= ()=>{
       setCart([])
@@ -64,6 +86,7 @@ export function CartProvider ({children}){
         removeCart,
         setCart,
         getProducts,
+        setCompra,
       }}
       >
         {children}

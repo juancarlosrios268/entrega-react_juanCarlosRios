@@ -11,7 +11,6 @@
 
 .cart {
     background: white;
-    /* display: none; */
     padding: 32px;
     position: fixed;
     right: 0px;
@@ -19,6 +18,10 @@
     width: 200px;
     z-index: 10;
   }
+
+.cart-display {
+  display: none;
+}
 
   .cart img {
     aspect-ratio: 16/9;
