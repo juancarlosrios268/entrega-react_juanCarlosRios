@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import {collection, getDocs, addDoc } from 'firebase/firestore/lite'
 import db from "../firebase";
+import Swal from 'sweetalert2';
 
 // creacion del contexto
 export const CartContext = createContext()
@@ -29,9 +30,22 @@ export function CartProvider ({children}){
           detalle: cart,
           total: totalCarrito
         })
-        console.log(docRef)
+        if(docRef) {
+          Swal.fire({
+            title: "Su Compra fue Exitosa!",
+            text: `Numero de orden ${docRef.id}`,
+            icon: "success"
+          });
+          setCart([]);
+          setIsActive(false);
+        }
       } catch(e) {
         console.log(e)
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error en su compra",
+        });
       }
     }
   
