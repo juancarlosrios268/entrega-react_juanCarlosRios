@@ -18,6 +18,13 @@ export function CartProvider ({children}){
       return productos
     }
 
+    async function getCategories() {
+      const categoriasCol = collection(db, 'categorias')
+      const categoriasSnapshot = await getDocs(categoriasCol)
+      const categorias = categoriasSnapshot.docs.map(producto => producto.data())
+      return categorias
+    }
+
     async function setCompra() {
       try {
         let totalCarrito=0
@@ -104,7 +111,8 @@ export function CartProvider ({children}){
         getProducts,
         setCompra,
         setIsActive,
-        isActive
+        isActive,
+        getCategories,
       }}
       >
         {children}

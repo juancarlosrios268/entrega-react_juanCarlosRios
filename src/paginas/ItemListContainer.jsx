@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 
 import { CartContext } from "../components/CartContext";
 import { useContext } from "react";
+import { useParams } from "react-router-dom";
 
 
 
@@ -11,6 +12,8 @@ function ItemListContainer() {
   const [productsFir, setProductosFir] = useState([])
 
   const { getProducts } = useContext(CartContext)
+
+  const {name} = useParams();
 
   useEffect(() => {
     getProducts().then(data => {
@@ -21,9 +24,14 @@ function ItemListContainer() {
 
     return (
       <div id="container">
-            {productsFir.map(prod=>(
-              <Producto key ={prod.id} {...prod} />
-            ))}
+            {productsFir.map(prod=>{
+              if(!name || name === '') {
+                return <Producto key ={prod.id} {...prod} />
+              }
+              if(prod.categoria === name) {
+                return <Producto key ={prod.id} {...prod} />
+              }
+            })}
             
       </div>
     )

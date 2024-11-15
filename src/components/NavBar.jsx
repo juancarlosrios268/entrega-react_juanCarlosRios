@@ -1,8 +1,22 @@
 import CartWidget from './CartWidget'
 import './navBar.css'
 import {Link, Outlet} from "react-router-dom"
+import { useContext } from "react";
+import { CartContext } from "../components/CartContext";
+import { useEffect, useState } from "react"
 
 function NavBar() {
+
+  const [categorias, setCategorias] = useState([])
+
+  const { getCategories } = useContext(CartContext)
+
+  useEffect(() => {
+    getCategories().then(data => {
+      setCategorias(data)
+    }).catch(e => console.log(e))
+  }, [getCategories])
+
     return (
       <>
       <nav className="navBar">
@@ -12,15 +26,14 @@ function NavBar() {
             <li className="listaItem">
               <Link to={"/"}>Home</Link>
             </li>
-            <li className="listaItem">
-              <Link to={"Maquinas"}>Maquinas</Link>
-             </li>
-             <li className="listaItem">
-              <Link to={"Tintas"}>Tintas</Link>
-             </li>
-             <li className="listaItem">
-              <Link to={"Cartuchos"}>Cartuchos</Link>
-             </li>
+             {categorias.map(categoria => (
+                    <li key={categoria.filtro}  className="listaItem">
+                        <Link to={`categorias/${categoria.filtro}`}>
+                            {categoria.nombre}
+                        </Link>
+                    </li>
+                ))}
+
              <li className="listaItem">
               <Link to={"Contacto"}>Contacto</Link>
              </li>
