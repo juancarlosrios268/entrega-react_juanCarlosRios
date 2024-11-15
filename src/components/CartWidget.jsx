@@ -5,9 +5,7 @@ import { useContext, useState } from "react";
 
 
 function CartWidget() {
-
-    const [isActive, setIsActive] = useState(false)
-    const { cart, clearCart, setCompra } = useContext(CartContext)
+    const { cart, clearCart, setCompra, isActive, setIsActive } = useContext(CartContext)
 
     return (
       <>

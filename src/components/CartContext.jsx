@@ -8,6 +8,7 @@ export const CartContext = createContext()
 // creacion del provider
 export function CartProvider ({children}){
     const [cart, setCart] = useState([])
+    const [isActive, setIsActive] = useState(false)
 
     async function getProducts() {
       const productosCol = collection(db, 'productos')
@@ -43,6 +44,7 @@ export function CartProvider ({children}){
 
 
     const addToCart= (product) => {
+      setIsActive(true)
       let newProduct = {
         precio: product.precio,
         nombre: product.nombre,
@@ -87,6 +89,8 @@ export function CartProvider ({children}){
         setCart,
         getProducts,
         setCompra,
+        setIsActive,
+        isActive
       }}
       >
         {children}
